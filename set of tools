@@ -15,7 +15,7 @@ sudo git clone https://github.com/danielmiessler/SecLists /opt/sec
 
 
 echo "${blue} ${red}Installing Evil-winrm"
-sudo gem install winrm winrm-fs colorize stringio -y && sudo gem install evil-winrm -y
+sudo gem install winrm winrm-fs colorize stringio && sudo gem install evil-winrm
 
 
 echo "${blue} ${red}Installing CrackMapExec - cme"
@@ -48,5 +48,17 @@ sudo apt install jq -y
 echo "${blue} ${red}Installing GPP crack password tool!"
 #GPP stands for "Group Policy Preferences File"
 sudo apt install gpp-decrypt
+
+echo"${blue} ${red}Installing mount stuff - to moung shares"
+sudo apt-get install cifs-utils -y
+sudo apt-get install libguestfs-tools -y
+
+echo "Installing rlwrap for good reverse shell"
+sudo apt install rlwrap -y
+
+echo "Installing python2 and pip2"
+sudo apt install python2 -y
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+sudo python2 get-pip.py
 
 sudo apt update -y
