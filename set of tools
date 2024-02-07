@@ -26,6 +26,7 @@ echo "${blue} ${red}Getting imapckets ready!!"
 sudo git clone https://github.com/SecureAuthCorp/impacket.git /opt/impacket
 sudo pip3 install -r /opt/impacket/requirements.txt
 sudo python3 ./setup.py install
+###MIND THIS => pip install impacket==0.9.22
    
 
 echo "${blue} ${red}Installing FFUF"
