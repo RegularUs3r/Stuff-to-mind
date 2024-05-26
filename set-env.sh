@@ -7,12 +7,13 @@ nc='\033[0m'
 user=$(cat /etc/passwd | grep sh$ | grep "home" | cut -d ':' -f 1)
 sudo apt-get update -y
 
+sudo mkdir tempos
 echo -e "${blue}${red}Installing latest golang version${nc}"
 sudo apt-get remove golang-go -y
 sudo apt-get autoremove -y
-wget -q https://go.dev/dl/go1.21.5.linux-amd64.tar.gz -O /home/$user/Downloads/go.tar.gz
-sudo tar -C /usr/local/bin/. -xzf /home/$user/Downloads/go.tar.gz
-rm  /home/$user/Downloads/go.tar.gz
+sudo wget -q https://go.dev/dl/go1.21.5.linux-amd64.tar.gz -O /home/$user/tempos/go.tar.gz
+sudo tar -C /usr/local/bin/. -xzf /home/$user/tempos/go.tar.gz
+sudo rm  /home/$user/tempos/go.tar.gz
 echo "export PATH=/usr/local/bin/go/bin:$PATH" >> /home/$user/.bashrc
 source /home/$user/.bashrc
 
@@ -41,25 +42,25 @@ echo -e "${blue}${red}Cloning SecLists${nc}"
 sudo git clone https://github.com/danielmiessler/SecLists.git /opt/sec
 
 echo -e "${blue}${red}Installing NGROK${nc}"
-wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -O /home/$user/Downloads/ngrok.tgz
-tar -C /home/$user/Downloads/ -xzf /home/$user/Downloads/ngrok.tgz
-chmod +x /home/$user/Downloads/ngrok
-rm /home/$user/Downloads/ngrok.tgz
-sudo -u $user bash -c "/home/$user/Downloads/ngrok config add-authtoken 2U7i1R4Xskpv2qcL28SPTztfqPv_4PFqD2mQk4Urd33DypbFr"
+sudo wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -O /home/$user/tempos/ngrok.tgz
+sudo tar -C /home/$user/tempos/ -xzf /home/$user/tempos/ngrok.tgz
+sudo chmod +x /home/$user/tempos/ngrok
+sudo rm /home/$user/tempos/ngrok.tgz
+sudo -u $user bash -c "/home/$user/tempos/ngrok config add-authtoken 2U7i1R4Xskpv2qcL28SPTztfqPv_4PFqD2mQk4Urd33DypbFr"
 
 echo -e "${blue}${red}Installing latest BurpSuite version${nc}"
 sudo apt-get remove burpsuite -y
 sudo apt-get autoremove -y
-wget -q 'https://portswigger-cdn.net/burp/releases/download?product=pro&version=2023.11.1.3&type=Linux' -O /home/$user/Downloads/burp.sh
-chmod +x /home/$user/Downloads/burp.sh
-/home/$user/Downloads/./burp.sh
-sudo rm /home/$user/Downloads/burp.sh
+sudo wget -q 'https://portswigger-cdn.net/burp/releases/startdownload?product=community&version=2024.2.1.3&type=Linux' -O /home/$user/tempos/burp.sh
+sudo chmod +x /home/$user/tempos/burp.sh
+/home/$user/tempos/./burp.sh
+sudo rm /home/$user/tempos/burp.sh
 
 echo -e "${blue}${red}Installing python2 & pip2${nc}"
 sudo apt-get install python2 -y
-sudo wget -q https://bootstrap.pypa.io/pip/2.7/get-pip.py -O /home/$user/Downloads/pip2.py
-sudo python2 /home/$user/Downloads/pip2.py
-sudo rm /home/$user/Downloads/pip2.py
+sudo wget -q https://bootstrap.pypa.io/pip/2.7/get-pip.py -O /home/$user/tempos/pip2.py
+sudo python2 /home/$user/tempos/pip2.py
+sudo rm /home/$user/tempos/pip2.py
 
 echo -e "${blue}${red}Installing JQ${nc}"
 sudo apt-get install jq -y
