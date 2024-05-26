@@ -1,0 +1,1 @@
+alias killnotion="ps aux | grep 'ngrok\|python' | grep http | awk '{print \$2}' | xargs -r sudo kill -9"
