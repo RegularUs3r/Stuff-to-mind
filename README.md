@@ -44,6 +44,9 @@ Just a collection of things I (sometimes) use on a daily basis
     extract lines that ends with N digits
     grep -E "[0-9]{4}"
 
+    grep match, but shows everything else
+    greo -iz ""
+
 
 #### uniqs
     Merge files of line from each
