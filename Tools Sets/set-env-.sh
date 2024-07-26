@@ -46,7 +46,7 @@ sudo wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tg
 sudo tar -C /home/$user/tempos/ -xzf /home/$user/tempos/ngrok.tgz
 sudo chmod +x /home/$user/tempos/ngrok
 sudo rm /home/$user/tempos/ngrok.tgz
-sudo -u $user bash -c "/home/$user/tempos/ngrok config add-authtoken 2U7i1R4Xskpv2qcL28SPTztfqPv_4PFqD2mQk4Urd33DypbFr"
+sudo -u $user bash -c "/home/$user/tempos/ngrok config add-authtoken NGROK-AUTH-KEY"
 
 echo -e "${blue}${red}Installing latest BurpSuite version${nc}"
 sudo apt-get remove burpsuite -y
