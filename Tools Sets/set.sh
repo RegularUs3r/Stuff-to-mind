@@ -47,7 +47,7 @@ sudo tar -C /home/$user/tmp-downloads/ -xzf /home/$user/tmp-downloads/ngrok.tgz
 sudo chmod +x /home/$user/tmp-downloads/ngrok && sudo mv /home/$user/tmp-downloads/ngrok /usr/local/bin/.
 sudo mv /home/$user/tmp-downloads/ngrok /usr/local/bin/.
 #rm /home/$user/tmp-downloads/ngrok.tgz
-sudo -u $user bash -c "/usr/local/bin/ngrok config add-authtoken 2U7i1R4Xskpv2qcL28SPTztfqPv_4PFqD2mQk4Urd33DypbFr"
+sudo -u $user bash -c "/usr/local/bin/ngrok config add-authtoken NGROK-AUTH-KEY"
 
 echo -e "${blue}${red}Installing latest BurpSuite version${nc}"
 sudo apt-get remove burpsuite -y
