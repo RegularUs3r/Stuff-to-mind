@@ -38,7 +38,7 @@ wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -O 
 tar -C /home/$user/Downloads/ -xzf /home/$user/Downloads/ngrok.tgz
 chmod +x /home/$user/Downloads/ngrok
 rm /home/$user/Downloads/ngrok.tgz
-sudo -u $user bash -c "/home/$user/Downloads/ngrok config add-authtoken 2U7i1R4Xskpv2qcL28SPTztfqPv_4PFqD2mQk4Urd33DypbFr"
+sudo -u $user bash -c "/home/$user/Downloads/ngrok config add-authtoken NGROK-AUTH-KEY"
 
 echo -e "${blue}${red}Setting up tmux${nc}"
 echo 'set -g prefix C-a' >> .tmux.conf
