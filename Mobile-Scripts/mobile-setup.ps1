@@ -21,11 +21,11 @@ function RootBypass {
     )
     $app_identifier=(frida-ps -Uai | awk '{print $NF}' | Select-String $app)
     #Write-Output $app_identifier
-    frida -U -f $app_identifier -l C:\Users\geraldo.filho\Documents\Mobile-Stuff\fridantiroot.js
+    frida -U -f $app_identifier -l C:\Users\<user>\Documents\Mobile-Stuff\fridantiroot.js
 }
 
 function SSLpinning {
-    frida -U -F -l C:\Users\geraldo.filho\Documents\Mobile-Stuff\frida-multiple-unpinning.js  
+    frida -U -F -l C:\Users\<user>\Documents\Mobile-Stuff\frida-multiple-unpinning.js  
 }
 
 
