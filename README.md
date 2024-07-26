@@ -54,3 +54,10 @@ Just a collection of things I (sometimes) use on a daily basis
 
     Sort uniqs by their beginning
     sort -ut '{delimeter-here}' -k1,1 (use it carefully)
+
+#### Powershell
+    Find files given a certain extension and get their content
+    ForEach ($files in Get-ChildItem -Force -recurse){if ($files -Like "*.txt"){echo $files | Get-Content}}
+
+    Based64 file content encoding
+    [convert]::ToBase64String((gc file.txt -Encoding byte))
