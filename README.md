@@ -23,8 +23,11 @@ Just a collection of things I (sometimes) use on a daily basis
     Remove/replace char after match
     sed 's/{change-here}.*/ZZZ/g'
 
-    #Replace blocks of strings between patterns (e.g =)
+    Replace blocks of strings between patterns (e.g =)
     sed -E 's/=([A-Z]+)/{change-here}/g
+	
+	Remove/Replace up to a point excepts the char after ˆ
+	sed 's/string=[ˆ&]//g'
 
 ##### jq section
     URL encode
@@ -41,11 +44,14 @@ Just a collection of things I (sometimes) use on a daily basis
     jq ' .[] | select(. | startswith("<string>"))'
 
 ##### grep section
-    extract lines that ends with N digits
+    extract lines with N digits
     grep -E "[0-9]{4}"
 
     grep match, but shows everything else
     greo -iz ""
+
+	grep up to a point excepts the char after ˆ
+	grep "string=[ˆ&]*"
 
 
 #### uniqs
